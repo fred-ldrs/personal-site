@@ -78,22 +78,15 @@ p {
 /* Footer */
 footer {
   margin-top: 4rem;
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   text-align: center;
   font-size: 0.9rem;
-  color: #999;
-  border-top: 1px solid #333;
-  font-family: 'Inter', sans-serif;
-}
-
-footer p {
-  margin: 0.3rem 0;
+  color: #777;
 }
 
 footer a {
-  color: #999;
+  color: #777;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 footer a:hover,
