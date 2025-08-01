@@ -122,15 +122,21 @@ p {
   fill: currentColor;
 }
 
+/* Projektliste zentriert darstellen */
 .project-grid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
+  align-items: center;
   margin-top: 2rem;
 }
 
+/* Einzelne Projektkarte */
 .project-card {
   display: flex;
+  flex-direction: row;
   gap: 1.5rem;
+  align-items: center;
   padding: 1.5rem;
   border: 1px solid #444;
   border-radius: 8px;
@@ -138,6 +144,9 @@ p {
   color: #ccc;
   text-decoration: none;
   transition: background 0.3s, transform 0.2s;
+  max-width: 600px;
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .project-card:hover {
@@ -204,4 +213,5 @@ footer a:focus {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1rem;
+  text-align: center;
 }
