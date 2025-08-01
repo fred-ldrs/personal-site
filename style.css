@@ -21,47 +21,53 @@ body {
   padding: 2rem;
   text-align: center;
   overflow-x: hidden;
+  margin-top: 70px; /* Höhe der Nav-Leiste + Abstand */
 }
 
+/* Navigation fixieren */
 .nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #0f0f0f;
+  background-color: #0f0f0f;
   border-bottom: 1px solid #222;
-  display: flex;
-  justify-content: center;
-  z-index: 1000;
+  z-index: 999;
 }
 
+/* UL-Styling */
 .nav ul {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
-  padding: 1rem;
+  padding: 1rem 0;
   margin: 0;
   list-style: none;
 }
 
+/* Link-Styling */
 .nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.9rem;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 .nav a:hover {
   color: #66ccff;
 }
 
+/* Icon-Größe */
 .nav .icon {
   width: 24px;
   height: 24px;
-  margin-bottom: 0.25rem;
   fill: currentColor;
+  margin-bottom: 0.2rem;
 }
 
 main {
