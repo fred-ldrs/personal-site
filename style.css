@@ -77,6 +77,7 @@ p {
 
 /* Footer */
 footer {
+  border-top: 1px solid #ddd;
   margin-top: 4rem;
   padding: 2rem 0;
   text-align: center;
