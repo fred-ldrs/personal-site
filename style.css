@@ -24,7 +24,7 @@ body {
   margin-top: 70px; /* Höhe der Nav-Leiste + Abstand */
 }
 
-/* Navigation fixieren */
+/* Fixe Navigationsleiste */
 .nav {
   position: fixed;
   top: 0;
@@ -32,10 +32,9 @@ body {
   width: 100%;
   background-color: #0f0f0f;
   border-bottom: 1px solid #222;
-  z-index: 999;
+  z-index: 1000;
 }
 
-/* UL-Styling */
 .nav ul {
   display: flex;
   justify-content: center;
@@ -46,7 +45,6 @@ body {
   list-style: none;
 }
 
-/* Link-Styling */
 .nav a {
   display: flex;
   flex-direction: column;
@@ -62,7 +60,6 @@ body {
   color: #66ccff;
 }
 
-/* Icon-Größe */
 .nav .icon {
   width: 24px;
   height: 24px;
