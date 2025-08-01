@@ -15,13 +15,11 @@ html, body {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  text-align: center;
-  overflow-x: hidden;
-  margin-top: 70px; /* Höhe der Nav-Leiste + Abstand */
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #0d0d0d;
+  color: #ccc;
+  margin-top: 70px; /* wegen fixer Nav */
 }
 
 /* Fixe Navigationsleiste */
@@ -58,6 +56,11 @@ body {
 
 .nav a:hover {
   color: #66ccff;
+}
+
+.nav a.active {
+  color: #66ccff;
+  font-weight: 600;
 }
 
 .nav .icon {
