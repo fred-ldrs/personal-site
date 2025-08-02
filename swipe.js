@@ -1,4 +1,4 @@
-const pages = ["/index.html", "/about.html", "/work.html"];
+const pages = ["/index.html", "/about.html", "/work.html", "/blog.html"];
 const current = window.location.pathname.endsWith("/") ? "/index.html" : window.location.pathname;
 
 let startX = 0;
