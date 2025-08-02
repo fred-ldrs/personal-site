@@ -26,3 +26,34 @@
   font-size: 1rem;
   line-height: 1.6;
 }
+
+.blog-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.blog-list li a {
+  display: block;
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  background-color: #1e1e1e;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.blog-list li a:hover {
+  background-color: #333;
+}
+
+.blog-list li a span {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
