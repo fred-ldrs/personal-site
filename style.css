@@ -215,3 +215,10 @@ footer a:focus {
   padding: 0 1rem;
   text-align: center;
 }
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}

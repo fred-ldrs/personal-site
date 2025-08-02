@@ -1,5 +1,7 @@
-const pages = ["/index.html", "/about.html", "/work.html"];
-const current = window.location.pathname.endsWith("/") ? "/index.html" : window.location.pathname;
+const pages = ["index.html", "about.html", "work.html", "blog.html"];
+
+let current = window.location.pathname.split("/").pop();
+if (current === "" || current === "/") current = "index.html";
 
 let startX = 0;
 
@@ -13,11 +15,11 @@ document.addEventListener("touchend", (e) => {
 
   if (Math.abs(deltaX) > 50) {
     const currentIndex = pages.indexOf(current);
+    if (currentIndex === -1) return; // falls aktuelle Seite nicht gelistet ist
+
     if (deltaX < 0 && currentIndex < pages.length - 1) {
-      // swipe left → next page
       window.location.href = pages[currentIndex + 1];
     } else if (deltaX > 0 && currentIndex > 0) {
-      // swipe right → previous page
       window.location.href = pages[currentIndex - 1];
     }
   }
