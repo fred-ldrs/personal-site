@@ -1,5 +1,6 @@
-const pages = ["/index.html", "/about.html", "/work.html", "/blog.html"];
-const current = window.location.pathname.endsWith("/") ? "/index.html" : window.location.pathname;
+const pages = ["index.html", "about.html", "work.html", "blog.html"];
+let current = window.location.pathname.split("/").pop();
+if (current === "") current = "index.html";
 
 let startX = 0;
 
