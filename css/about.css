@@ -1,4 +1,4 @@
-/* about.css – nur für about.html gedacht */
+/* about.css – nur für about.html */
 
 .about main {
   padding: 2rem;
@@ -9,9 +9,23 @@
 .about h1,
 .about h2 {
   color: #fff;
+  margin-top: 1.5rem;
 }
 
-.about p {
+.about p,
+.about li,
+.about a {
   color: #aaa;
+  font-size: 1rem;
   line-height: 1.6;
+}
+
+.about ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+  margin-bottom: 1rem;
+}
+
+.about a:hover {
+  text-decoration: underline;
 }
