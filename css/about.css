@@ -1,0 +1,17 @@
+/* about.css – nur für about.html gedacht */
+
+.about main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about h1,
+.about h2 {
+  color: #fff;
+}
+
+.about p {
+  color: #aaa;
+  line-height: 1.6;
+}
