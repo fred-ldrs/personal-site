@@ -1,50 +1,108 @@
-/* Projektliste zentriert darstellen */
+/* Import des design tokens */
+@import url('design-tokens.css');
+
 .project-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+  padding: 0 var(--space-md);
 }
 
-/* Einzelne Projektkarte */
 .project-card {
   display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-  align-items: center;
-  padding: 1.5rem;
-  border: 1px solid #444;
-  border-radius: 8px;
-  background-color: #111;
-  color: #ccc;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  padding: var(--space-xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
   text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
-  max-width: 600px;
-  width: 100%;
-  justify-content: flex-start;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
 }
 
-.project-card:hover {
-  background-color: #1a1a1a;
-  transform: translateY(-3px);
-  color: #fff;
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+  transition: left var(--transition-slow);
+}
+
+.project-card:hover::before,
+.project-card:focus-visible::before {
+  left: 0;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  background-color: var(--color-bg-elevated);
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text-primary);
+  outline: none;
+}
+
+.project-icon {
+  flex-shrink: 0;
+  padding: var(--space-md);
+  background-color: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.project-card:hover .project-icon {
+  background-color: var(--color-accent);
+  transform: scale(1.05) rotate(2deg);
 }
 
 .project-icon svg {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   fill: currentColor;
+  transition: fill var(--transition-base);
+}
+
+.project-card:hover .project-icon svg {
+  fill: var(--color-bg-primary);
 }
 
 .project-info h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #fff;
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  transition: color var(--transition-base);
 }
 
 .project-info p {
-  margin-top: 0.25rem;
-  font-size: 1rem;
-  color: #aaa;
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+}
+
+.project-card:hover .project-info p {
+  color: var(--color-text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+  
+  .project-icon {
+    align-self: center;
+  }
 }
