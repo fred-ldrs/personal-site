@@ -5,102 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="robots" content="noindex, nofollow">
   <title>Frederik Lüders</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Preconnect aux domaines externes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- CSS critique inline pour éviter FOUC -->
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --color-bg-primary: #000000;
+      --color-text-primary: #ffffff;
     }
-
-    html, body {
-      height: 100%;
-      background-color: #000;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-    }
-
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-family: system-ui, sans-serif;
+      opacity: 0;
+      animation: fadeIn 0.3s ease forwards;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 2rem;
       overflow-x: hidden;
+      min-height: 100vh;
     }
-
-    main {
-      max-width: 800px;
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards;
-    }
-
+    
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
-
-    h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      font-size: 1.25rem;
-      margin-bottom: 3rem;
-      color: #bbb;
-    }
-
-    .links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0.5rem;
-      padding: 0.75rem 1.25rem;
-      border: 1px solid #fff;
-      color: #fff;
-      text-decoration: none;
-      transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
-      font-size: 1rem;
-      border-radius: 4px;
-    }
-
-    .links a:hover {
-      background: #fff;
-      color: #000;
-      transform: scale(1.05);
-    }
-
-    .links svg {
-      width: 1rem;
-      height: 1rem;
-      fill: currentColor;
-    }
-
-    footer {
-      margin-top: 4rem;
-      font-size: 0.875rem;
-      color: #666;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .links a {
-        display: block;
-        width: 100%;
-        justify-content: center;
-        margin: 0.5rem 0;
-      }
+    
+    /* Override pour la page d'accueil */
+    body main {
+      margin-top: 0 !important;
+      animation: fadeInUp 1s ease-out forwards;
     }
   </style>
+  
+  <!-- CSS non-critique chargé de manière asynchrone -->
+  <link rel="stylesheet" href="css/design-tokens.css">
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Fonts avec display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
   
@@ -140,7 +93,8 @@
 
    </div>
   </main>
-  <script src="js/load-nav.js"></script>
-  <script src="js/swipe.js"></script>
+  <!-- Scripts avec defer -->
+  <script defer src="js/load-nav.js"></script>
+  <script defer src="js/swipe.js"></script>
 </body>
 </html>

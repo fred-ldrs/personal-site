@@ -1,59 +1,98 @@
-/* blog.css – nur für blog.html gedacht */
+/* Import des design tokens */
+@import url('design-tokens.css');
 
 /* Blog-Beiträge-Container */
 .blog-posts {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
-  padding: 1rem;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+  padding: var(--space-md);
 }
 
 /* Einzelner Beitrag */
 .blog-post {
-  border-bottom: 1px solid #333;
-  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-md);
 }
 
 .blog-post h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-primary);
+  font-weight: 600;
 }
 
 .blog-post p {
-  color: #aaa;
-  font-size: 1rem;
-  line-height: 1.6;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
 }
 
 .blog-list {
   list-style: none;
   padding: 0;
-  margin-top: 1.5rem;
+  margin-top: var(--space-lg);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-lg);
 }
 
 .blog-list li a {
   display: block;
-  padding: 1rem;
-  border: 1px solid #444;
-  border-radius: 0.5rem;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   text-decoration: none;
-  background-color: #1e1e1e;
-  color: #fff;
-  transition: background-color 0.2s ease;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
 }
 
-.blog-list li a:hover {
-  background-color: #333;
+.blog-list li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(102, 204, 255, 0.1), transparent);
+  transition: left var(--transition-base);
+  z-index: 0;
+}
+
+.blog-list li a:hover::before,
+.blog-list li a:focus-visible::before {
+  left: 0;
+}
+
+.blog-list li a:hover,
+.blog-list li a:focus-visible {
+  background-color: var(--color-bg-elevated);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  outline: none;
+}
+
+.blog-list li a strong {
+  position: relative;
+  z-index: 1;
+  color: var(--color-text-primary);
 }
 
 .blog-list li a span {
   display: block;
-  margin-top: 0.3rem;
-  font-size: 0.9rem;
-  color: #aaa;
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  position: relative;
+  z-index: 1;
+  transition: color var(--transition-base);
+}
+
+.blog-list li a:hover span {
+  color: var(--color-accent);
 }
