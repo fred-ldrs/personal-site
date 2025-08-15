@@ -86,7 +86,8 @@ document.addEventListener("touchmove", (e) => {
   const deltaY = Math.abs(currentY - startY);
   
   // Déterminer si l'utilisateur fait défiler verticalement
-  if (deltaY > deltaX) {
+  // Déterminer si l'utilisateur fait défiler verticalement (avec seuil minimum)
+  if (deltaY > 10 && deltaY > deltaX) {
     isScrolling = true;
   }
   
