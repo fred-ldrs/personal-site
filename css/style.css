@@ -341,22 +341,24 @@ footer a:focus-visible {
 /* Responsive */
 @media (max-width: 768px) {
   .nav {
-    height: 70px;
+    height: 80px;
   }
   
   .nav-container {
     padding: 0 var(--space-sm);
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    gap: var(--space-xs);
+    gap: 0;
   }
   
   .nav-menu {
-    gap: var(--space-xs);
+    gap: var(--space-sm);
+    flex: 1;
+    justify-content: space-evenly;
   }
   
   .nav-link {
-    padding: var(--space-xs) var(--space-sm);
+    padding: var(--space-xs);
     min-width: 50px;
   }
   
@@ -375,6 +377,7 @@ footer a:focus-visible {
     right: var(--space-sm);
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1001;
   }
   
   .swipe-text {
@@ -382,7 +385,7 @@ footer a:focus-visible {
   }
   
   body {
-    margin-top: 70px;
+    margin-top: 80px;
   }
   
   h1 {
